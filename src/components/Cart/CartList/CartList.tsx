@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Snackbar, Alert, Switch, IconButton } from '@mui/material';
+import { Box, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Snackbar, Alert, Switch, IconButton, Typography } from '@mui/material';
 import AddCartModal from '../AddCartModal/AddCartModal';
 import DeleteIcon from '@mui/icons-material/Delete';
 interface Cart {
@@ -9,8 +9,14 @@ interface Cart {
 }
 
 const initialCarts: Cart[] = [
-  { id: 1, codigo: 'CART001', ativo: true },
-  { id: 2, codigo: 'CART002', ativo: false },
+  { id: 1001, codigo: 'CART001', ativo: true },
+  { id: 1002, codigo: 'CART002', ativo: false },
+  { id: 1003, codigo: 'CART003', ativo: false },
+  { id: 1004, codigo: 'CART004', ativo: true },
+  { id: 1005, codigo: 'CART005', ativo: true },
+  { id: 1006, codigo: 'CART006', ativo: true },
+  { id: 1007, codigo: 'CART007', ativo: false },
+  { id: 1008, codigo: 'CART008', ativo: true },
 ];
 
 const CartList: React.FC = () => {
@@ -43,7 +49,11 @@ const CartList: React.FC = () => {
 
   return (
     <Box sx={{ padding: 2 }}>
-      <TableContainer component={Paper} sx={{ mt: 2 }}>
+      
+      <Box className="box" sx={{ display: 'flex', justifyContent: 'flex-start', mt: 2 }}>
+      <Typography variant="h4" component="h1" sx={{ mb: 2, color: 'var(--cor-texto)' }}>Lista de Carrinhos</Typography>
+      </Box>
+      <TableContainer component={Paper} sx={{ mt: 2, backgroundColor: '#cfcfcf' }}>
         <Table>
           <TableHead>
             <TableRow>
@@ -66,7 +76,7 @@ const CartList: React.FC = () => {
                 </TableCell>
                 <TableCell>
                   <IconButton color="error" onClick={() => handleDelete(cart.id)}>
-                    <DeleteIcon />
+                    <DeleteIcon sx={{ color: '#bf2121' }} />
                   </IconButton>
                 </TableCell>
               </TableRow>
@@ -80,7 +90,7 @@ const CartList: React.FC = () => {
         onClose={handleClose}
         onAdd={handleAddCart}
       />
-      <Box className="box">
+      <Box className="box" sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
         <Button variant="outlined" onClick={handleOpen}>Adicionar Cart</Button>
       </Box>
       <Snackbar open={error || success} autoHideDuration={6000} onClose={handleCloseSnackbar}>
