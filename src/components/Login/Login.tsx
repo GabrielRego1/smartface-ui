@@ -2,7 +2,6 @@ import { Alert, Box, Button, FormControl, Input, Snackbar, Typography } from '@m
 import './Login.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 function Login() {
     const [username, setUsername] = useState('admin');
     const [password, setPassword] = useState('admin');
