@@ -1,19 +1,21 @@
 import { Alert, Box, Button, FormControl, Input, Snackbar, Typography } from '@mui/material';
 import './Login.css';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
-
+    const navigate = useNavigate();
     const handleLogin = () => {
         if (username === '' || password === '') {
             setError(true);
             return;
         }
         setSuccess(true);
+        navigate('carts')
     };
 
     const handleCloseSnackbar = () => {
