@@ -28,7 +28,8 @@ function Login() {
                     <Typography variant="h6">
                         Usuário
                     </Typography>
-                    <Input id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <Input     sx={{ color: 'white', '&::placeholder': { color: 'white' }, borderColor: 'white' }}
+                     placeholder="Digite seu usuário" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
                 </FormControl>
             </Box>
             <Box className="box">
@@ -36,7 +37,8 @@ function Login() {
                     <Typography variant="h6">
                         Senha
                     </Typography>
-                    <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <Input     sx={{ color: 'white', '&::placeholder': { color: 'white' }, borderColor: 'white' }}
+                     placeholder="Digite sua senha" id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </FormControl>
             </Box>
             <Button variant="outlined" onClick={handleLogin}>Entrar</Button>
