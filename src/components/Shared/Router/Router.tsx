@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "../../Login/Login";
-import CartList from "../../Cart/CartList";
+import CartList from "../../Cart/CartList/CartList";
 
 
 const Router = () => {
