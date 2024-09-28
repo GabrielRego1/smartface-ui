@@ -1,11 +1,11 @@
 import './App.css'
-import Login from './components/Login/Login'
+import Router from './components/Shared/Router/Router'
 
 function App() {
 
   return (
     <>
-      <Login />
+      <Router />
     </>
   )
 }
