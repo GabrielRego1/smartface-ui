@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('admin');
+    const [password, setPassword] = useState('admin');
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
     const navigate = useNavigate();
@@ -30,8 +30,8 @@ function Login() {
                     <Typography variant="h6">
                         Usuário
                     </Typography>
-                    <Input     sx={{ color: 'white', '&::placeholder': { color: 'white' }, borderColor: 'white' }}
-                     placeholder="Digite seu usuário" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <Input sx={{ color: 'white', '&::placeholder': { color: 'white' }, borderColor: 'white' }}
+                        placeholder="Digite seu usuário" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
                 </FormControl>
             </Box>
             <Box className="box">
@@ -39,11 +39,11 @@ function Login() {
                     <Typography variant="h6">
                         Senha
                     </Typography>
-                    <Input     sx={{ color: 'white', '&::placeholder': { color: 'white' }, borderColor: 'white' }}
-                     placeholder="Digite sua senha" id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <Input sx={{ color: 'white', '&::placeholder': { color: 'white' }, borderColor: 'white' }}
+                        placeholder="Digite sua senha" id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </FormControl>
             </Box>
-            <Button variant="outlined" onClick={handleLogin}>Entrar</Button>
+            <Button variant="outlined" sx={{ ml: 1, color: 'var(--cor-texto)', borderColor: 'var(--cor-botao)', }} onClick={handleLogin}>Entrar</Button>
             <Snackbar open={error || success} autoHideDuration={6000} onClose={handleCloseSnackbar}>
                 <Alert onClose={handleCloseSnackbar} severity={error ? 'error' : 'success'}>
                     {error ? 'Por favor, preencha todos os campos!' : 'Login bem-sucedido!'}

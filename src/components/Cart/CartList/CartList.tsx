@@ -47,7 +47,7 @@ const CartList: React.FC = () => {
   };
 
   return (
-    <Box sx={{ padding: 2, boxShadow:'0 8px 16px rgba(0, 0, 0, 0.5);'}}>
+    <Box sx={{ padding: 2, boxShadow: '0 8px 16px rgba(0, 0, 0, 0.5);', minWidth: '100vh' }}>
 
       <Box className="box" sx={{ display: 'flex', justifyContent: 'flex-start', mt: 2 }}>
         <Typography variant="h4" component="h1" sx={{ mb: 2, color: 'var(--cor-botao)' }}>Lista de Carrinhos</Typography>
