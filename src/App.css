@@ -12,12 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --cor-fundo: #121212; 
+  --cor-fundo: #1e1e1e; 
   --cor-texto: #e0e0e0; 
   --cor-link: #bb86fc; 
   --cor-botao: #6200ee; 
   --cor-botao-hover: #3700b3; 
-  --cor-carta: #1e1e1e; 
 }
 
 #root {

@@ -24,8 +24,8 @@ const AddCartModal: React.FC<AddCartModalProps> = ({ open, onClose, onAdd }) => 
 
     return (
         <Modal open={open} onClose={onClose}>
-            <Box sx={{ backgroundColor: 'white', padding: 3, borderRadius: 2, maxWidth: 400, margin: 'auto', marginTop: '20%' }}>
-                <Typography variant="h6" component="h2" sx={{ color: '#363636' }}>
+            <Box sx={{ backgroundColor: 'var(--cor-fundo)', padding: 3, borderRadius: 2, maxWidth: 400, margin: 'auto', marginTop: '20%' }} >
+                <Typography variant="h6" component="h2" sx={{ color: 'var(--cor-texto)' }}>
                     Adicionar Novo Cart
                 </Typography>
                 <input
@@ -37,8 +37,8 @@ const AddCartModal: React.FC<AddCartModalProps> = ({ open, onClose, onAdd }) => 
                 />
                 {error && <Typography color="error">Por favor, insira um código válido!</Typography>}
                 <Box sx={{ mt: 2 }}>
-                    <Button variant="contained" onClick={handleAddCart}>Salvar</Button>
-                    <Button variant="outlined" onClick={onClose} sx={{ ml: 1, backgroundColor: '#white', color: 'black', '&:hover': { backgroundColor: '#bf2121',color:'var(--cor-texto)' }, }}>Cancelar</Button>
+                    <Button variant="outlined" sx={{ ml: 1,color:'var(--cor-texto)' ,borderColor: 'var(--cor-botao)' }} onClick={handleAddCart}>Salvar</Button>
+                    <Button variant="outlined" onClick={onClose} sx={{ ml: 1, borderColor: '#bf2121', color: 'var(--cor-texto)', '&:hover': { bordercolor: 'white', backgroundColor: '#bf2121', color: 'var(--cor-texto)' }, }}>Cancelar</Button>
                 </Box>
             </Box>
         </Modal>
