@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, List, ListItem, ListItemText, Modal, Typography } from '@mui/material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
-// Tipos
 interface Cart {
     id: number;
     codigo: string;

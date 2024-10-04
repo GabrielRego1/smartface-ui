@@ -28,14 +28,14 @@ const CartList: React.FC = () => {
   const [openEditModal, setOpenEditModal] = useState(false);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [selectedCart, setSelectedCart] = useState<Cart | null>(null); // Carrinho selecionado para edição
-  const [editedCodigo, setEditedCodigo] = useState<string>(''); // Estado para o código editado
+  const [selectedCart, setSelectedCart] = useState<Cart | null>(null); 
+  const [editedCodigo, setEditedCodigo] = useState<string>(''); 
 
   const handleOpen = () => setOpenModal(true);
   const handleClose = () => setOpenModal(false);
   const handleOpenEditModal = (cart: Cart) => {
     setSelectedCart(cart);
-    setEditedCodigo(cart.codigo); // Preencher o campo de edição com o código do carrinho
+    setEditedCodigo(cart.codigo); 
     setOpenEditModal(true);
   };
   const handleCloseEditModal = () => setOpenEditModal(false);
