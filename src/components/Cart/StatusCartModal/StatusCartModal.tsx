@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Modal, Typography } from '@mui/material';
+import { Box, List, ListItem, ListItemText, Modal, Typography } from '@mui/material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 // Tipos
@@ -29,6 +29,30 @@ const batteryData = [
     { name: 'Nível Atual', value: batteryLevel },
     { name: 'Restante', value: 100 - batteryLevel },
 ];
+interface ScannedItem {
+    total: number;
+    good: number;
+    bad: number;
+}
+
+const scannedItems: { [key: string]: ScannedItem } = {
+    bananas: {
+        total: 3,
+        good: 2,
+        bad: 1,
+    },
+    macas: {
+        total: 5,
+        good: 3,
+        bad: 2,
+    }
+};
+const formatItemName = (item: string) => {
+    if (item === 'macas') {
+        return 'Maçãs';
+    }
+    return item.charAt(0).toUpperCase() + item.slice(1);
+};
 
 const COLORS = ['#0088FE', '#00C49F'];
 
@@ -54,6 +78,28 @@ const StatusCartModal: React.FC<StatusCartModalProps> = ({ open, onClose, cart }
                     }} variant="body1" component="pre">
                     ID do Carrinho: {cart?.id}
                 </Typography>
+
+                <Box className="container" sx={{ paddingTop: 2 }}>
+                    <Typography variant="h6" component="h2">
+                        Frutas Escaneadas
+                    </Typography>
+                    <List>
+                        {Object.keys(scannedItems).map((item) => (
+                            <ListItem
+                                key={item}
+                                sx={{ paddingTop: 0, paddingBottom: 0 }}
+                            >
+                                <ListItemText
+                                    primary={formatItemName(item)}
+                                    secondary={`Total: ${scannedItems[item].total}, Bom estado: ${scannedItems[item].good}, Mau estado: ${scannedItems[item].bad}`}
+                                    secondaryTypographyProps={{ style: { color: 'white' } }}
+                                />
+
+                            </ListItem>
+                        ))}
+                    </List>
+                </Box>
+
                 <Typography variant="h6" component="h2" sx={{ mt: 3 }}>
                     Distância Percorrida (km)
                 </Typography>
