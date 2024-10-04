@@ -14,11 +14,11 @@ interface Cart {
 }
 
 const initialCarts: Cart[] = [
-  { id: 1001, codigo: 'CART001', ativo: true },
-  { id: 1002, codigo: 'CART002', ativo: false },
-  { id: 1003, codigo: 'CART003', ativo: false },
-  { id: 1004, codigo: 'CART004', ativo: true },
-  { id: 1005, codigo: 'CART005', ativo: true },
+  { id: 1, codigo: 'CART001', ativo: true },
+  { id: 2, codigo: 'CART002', ativo: false },
+  { id: 3, codigo: 'CART003', ativo: false },
+  { id: 4, codigo: 'CART004', ativo: true },
+  { id: 5, codigo: 'CART005', ativo: true },
 ];
 
 const CartList: React.FC = () => {
